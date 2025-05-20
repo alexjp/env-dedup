@@ -15,9 +15,9 @@ The dynamic version cleans only the environment variable that is being changed
 # Usage
 
 ## Build
-To build the static version use:
+- To build the static version use:
 `gcc -shared -fPIC -o libenv_dedup.so env_dedup.c -ldl`
-To build the dynamic version use:
+- To build the dynamic version use:
 `gcc -shared -fPIC -o libenv_dedup_dynamic.so env_dedup_dynamic.c -ldl`
 
 ## Apply
@@ -29,7 +29,7 @@ Consider adding exporting it on `.bashrc` or for KDE to `~/.config/plasma-worksp
 
 ### On NixOS
 You can add:
-`  environment.variables.LD_PRELOAD = "/etc/nixos/libenv_dedup_dynamic.so";`
+`environment.variables.LD_PRELOAD = "/etc/nixos/libenv_dedup_dynamic.so";`
 to make it system wide.
 (adjust the location as needed)
 
