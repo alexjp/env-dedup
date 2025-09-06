@@ -19,6 +19,8 @@ The dynamic version cleans only the environment variable that is being changed
 `gcc -shared -fPIC -o libenv_dedup.so env_dedup.c -ldl`
 - To build the dynamic version use:
 `gcc -shared -fPIC -o libenv_dedup_dynamic.so env_dedup_dynamic.c -ldl`
+- To build the dynamic optimised version, use:
+`gcc -shared -fPIC -O3 -D_GNU_SOURCE -o libenv_dedup_dynamic_optimised_o3.so env_dedup_dynamic_optimised.c -ldl`
 
 ## Apply
 Add the dynamic library to `LD_PRELOAD` like this and test it:
